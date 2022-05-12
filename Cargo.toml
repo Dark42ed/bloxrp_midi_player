@@ -1,0 +1,19 @@
+[package]
+name = "bloxrp_midi_player"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+midly = "*"
+midi-reader-writer = {version = "*", features = [
+    "engine-midly-0-5"
+]}
+sysinputs = "*"
+device_query = "*"
+
+[profile.release]
+strip = true
+lto = true
+codegen-units = 1
